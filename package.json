@@ -1,0 +1,18 @@
+{
+  "name": "cypress-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^13.6.4",
+    "mochawesome": "^7.1.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
+}
