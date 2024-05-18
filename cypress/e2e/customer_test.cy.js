@@ -1,5 +1,8 @@
 /// <reference types="Cypress" />
 
+import { customers } from '../fixtures/customers.json'
+import { faker }  from '@faker-js/faker'
+
 describe('Caso de teste para cadastro de cliente', () =>{
 
   const contentType = {
@@ -16,8 +19,8 @@ describe('Caso de teste para cadastro de cliente', () =>{
 	 */
   it('DEVE cadastrado o cliente QUANDO dados forem validos', () => {
     const customer =  {
-                        "cpf": "999.999.999-31",
-                        "nome": "Maria Joaquina de Amaral Pereira Goes"
+                        "cpf": customers[0].cpf,
+                        "nome": faker.lorem.words(5).toUpperCase()
                       };
 
     cy.request({
@@ -46,8 +49,8 @@ describe('Caso de teste para cadastro de cliente', () =>{
 	   * */
   it('DEVE retonar BAD Request (400) quando CPF for invalido', () => {
     const customer =  {
-      "cpf": "333.123.123",
-      "nome": "Maria Joaquina"
+      "cpf": customers[1].cpf,
+      "nome": faker.lorem.words(4).toLowerCase()
     };
     
     cy.request({
